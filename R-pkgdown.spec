@@ -4,28 +4,67 @@
 #
 Name     : R-pkgdown
 Version  : 1.3.0
-Release  : 10
+Release  : 11
 URL      : https://cran.r-project.org/src/contrib/pkgdown_1.3.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/pkgdown_1.3.0.tar.gz
 Summary  : Make Static HTML Documentation for a Package
 Group    : Development/Tools
 License  : MIT
+Requires: R-R6
+Requires: R-callr
+Requires: R-cli
+Requires: R-crayon
+Requires: R-desc
+Requires: R-digest
+Requires: R-evaluate
+Requires: R-fansi
+Requires: R-fs
+Requires: R-highlight
+Requires: R-httr
+Requires: R-magrittr
+Requires: R-memoise
+Requires: R-openssl
+Requires: R-pkgload
+Requires: R-processx
+Requires: R-purrr
+Requires: R-rematch2
+Requires: R-rlang
+Requires: R-rmarkdown
+Requires: R-roxygen2
+Requires: R-rsconnect
+Requires: R-rstudioapi
+Requires: R-stringi
+Requires: R-tibble
+Requires: R-whisker
+Requires: R-withr
+Requires: R-xml2
+Requires: R-yaml
+BuildRequires : R-R6
 BuildRequires : R-callr
+BuildRequires : R-cli
 BuildRequires : R-commonmark
+BuildRequires : R-crayon
 BuildRequires : R-desc
 BuildRequires : R-devtools
+BuildRequires : R-digest
+BuildRequires : R-evaluate
+BuildRequires : R-fansi
 BuildRequires : R-fs
 BuildRequires : R-highlight
 BuildRequires : R-httr
+BuildRequires : R-magrittr
 BuildRequires : R-memoise
 BuildRequires : R-openssl
 BuildRequires : R-pkgload
+BuildRequires : R-processx
 BuildRequires : R-purrr
 BuildRequires : R-rematch2
+BuildRequires : R-rlang
 BuildRequires : R-rmarkdown
 BuildRequires : R-roxygen2
 BuildRequires : R-rsconnect
 BuildRequires : R-rstudioapi
+BuildRequires : R-stringi
 BuildRequires : R-tibble
 BuildRequires : R-usethis
 BuildRequires : R-whisker
@@ -54,13 +93,13 @@ coverage](https://img.shields.io/codecov/c/github/r-lib/pkgdown/master.svg)](htt
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1552886585
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1562446701
 
 %install
-export SOURCE_DATE_EPOCH=1552886585
+export SOURCE_DATE_EPOCH=1562446701
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -89,12 +128,12 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc  pkgdown || :
+R CMD check --no-manual --no-examples --no-codoc pkgdown || :
 
 
 %files

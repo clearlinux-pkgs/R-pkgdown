@@ -15,6 +15,7 @@ R-rmarkdown
 R-roxygen2
 R-rsconnect
 R-rstudioapi
+R-stringi
 R-tibble
 R-usethis
 R-whisker
