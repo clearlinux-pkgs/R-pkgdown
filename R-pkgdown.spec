@@ -4,7 +4,7 @@
 #
 Name     : R-pkgdown
 Version  : 1.3.0
-Release  : 11
+Release  : 12
 URL      : https://cran.r-project.org/src/contrib/pkgdown_1.3.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/pkgdown_1.3.0.tar.gz
 Summary  : Make Static HTML Documentation for a Package
@@ -13,8 +13,10 @@ License  : MIT
 Requires: R-R6
 Requires: R-callr
 Requires: R-cli
+Requires: R-commonmark
 Requires: R-crayon
 Requires: R-desc
+Requires: R-devtools
 Requires: R-digest
 Requires: R-evaluate
 Requires: R-fansi
@@ -33,7 +35,6 @@ Requires: R-rmarkdown
 Requires: R-roxygen2
 Requires: R-rsconnect
 Requires: R-rstudioapi
-Requires: R-stringi
 Requires: R-tibble
 Requires: R-whisker
 Requires: R-withr
@@ -64,9 +65,7 @@ BuildRequires : R-rmarkdown
 BuildRequires : R-roxygen2
 BuildRequires : R-rsconnect
 BuildRequires : R-rstudioapi
-BuildRequires : R-stringi
 BuildRequires : R-tibble
-BuildRequires : R-usethis
 BuildRequires : R-whisker
 BuildRequires : R-withr
 BuildRequires : R-xml2
@@ -74,17 +73,8 @@ BuildRequires : R-yaml
 BuildRequires : buildreq-R
 
 %description
-# pkgdown <img src="man/figures/logo.png" align="right" alt="" width="120" />
-[![Travis-CI build
-status](https://travis-ci.org/r-lib/pkgdown.svg?branch=master)](https://travis-ci.org/r-lib/pkgdown)
-[![AppVeyor build
-status](https://ci.appveyor.com/api/projects/status/github/r-lib/pkgdown?branch=master&svg=true)](https://ci.appveyor.com/project/r-lib/pkgdown)
-[![Lifecycle:
-maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
-[![CRAN
-Status](https://www.r-pkg.org/badges/version/pkgdown)](https://cran.r-project.org/package=pkgdown)
-[![Codecov test
-coverage](https://img.shields.io/codecov/c/github/r-lib/pkgdown/master.svg)](https://codecov.io/github/r-lib/pkgdown?branch=master)
+'pkgdown' converts your documentation, vignettes, 'README', and more to 
+    'HTML' making it easy to share information about your package online.
 
 %prep
 %setup -q -c -n pkgdown
@@ -94,10 +84,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1562446701
+export SOURCE_DATE_EPOCH=1563571618
 
 %install
-export SOURCE_DATE_EPOCH=1562446701
+export SOURCE_DATE_EPOCH=1563571618
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
