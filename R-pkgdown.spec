@@ -4,7 +4,7 @@
 #
 Name     : R-pkgdown
 Version  : 1.5.1
-Release  : 18
+Release  : 19
 URL      : https://cran.r-project.org/src/contrib/pkgdown_1.5.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/pkgdown_1.5.1.tar.gz
 Summary  : Make Static HTML Documentation for a Package
@@ -30,7 +30,6 @@ Requires: R-rlang
 Requires: R-rmarkdown
 Requires: R-rstudioapi
 Requires: R-tibble
-Requires: R-usethis
 Requires: R-whisker
 Requires: R-withr
 Requires: R-xml2
@@ -55,7 +54,6 @@ BuildRequires : R-rlang
 BuildRequires : R-rmarkdown
 BuildRequires : R-rstudioapi
 BuildRequires : R-tibble
-BuildRequires : R-usethis
 BuildRequires : R-whisker
 BuildRequires : R-withr
 BuildRequires : R-xml2
@@ -63,26 +61,27 @@ BuildRequires : R-yaml
 BuildRequires : buildreq-R
 
 %description
-# pkgdown <img src="man/figures/logo.png" align="right" alt="" width="120" />
-<!-- badges: start -->
+'pkgdown' converts your documentation, vignettes, 'README', and more to 
+    'HTML' making it easy to share information about your package online.
 
 %prep
 %setup -q -c -n pkgdown
+cd %{_builddir}/pkgdown
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1587064122
+export SOURCE_DATE_EPOCH=1589772271
 
 %install
-export SOURCE_DATE_EPOCH=1587064122
+export SOURCE_DATE_EPOCH=1589772271
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
