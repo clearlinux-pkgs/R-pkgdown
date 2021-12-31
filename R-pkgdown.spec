@@ -4,7 +4,7 @@
 #
 Name     : R-pkgdown
 Version  : 2.0.1
-Release  : 32
+Release  : 33
 URL      : https://cran.r-project.org/src/contrib/pkgdown_2.0.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/pkgdown_2.0.1.tar.gz
 Summary  : Make Static HTML Documentation for a Package
